@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-// Import Swiper React components
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import "./ShowMovie.css";
-
-// import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import {

@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Model.css";
 import { AiOutlineClose } from "react-icons/ai";
 import BaseAxios from "../../api/axiosClient";
-// import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FadingBoxProps } from "../../types/types";
 
 const FadingBox: React.FC<FadingBoxProps> = ({ setIsModelOpen }) => {
-  // const navigate = useNavigate();
 
   const handleModalClose = () => {
     setIsModelOpen(false);

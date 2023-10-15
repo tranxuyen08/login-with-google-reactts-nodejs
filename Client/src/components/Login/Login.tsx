@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { login } from "../../redux/reducer/userSlice";
 import BaseAxios from "../../api/axiosClient";
 import queryString from "query-string";
-// import dotenv from 'dotenv';
-
-// dotenv.config()
-// const [searchParams] = useSearchParams();
 
 const deleteCookie = (name: string): void => {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
@@ -36,9 +32,6 @@ const getOauthGoogleUrl = () => {
 };
 
 const Login: React.FC = () => {
-  const param = useParams()
-  const [searchParams] = useSearchParams();
-
   const [errors, setErrors] = useState({
     email: "",
     password: "",
@@ -64,21 +57,11 @@ const Login: React.FC = () => {
   }, []);
 
   const oauthURL = getOauthGoogleUrl();
-  const logout = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refresh_token");
-    window.location.reload();
-  };
-  // const isAuthenticated = Boolean(localStorage.getItem("access_token"));
-
-  // {isAuthenticated ? (
-  //   <div>
-  //     <p>Xin chào, bạn đã login thành công</p>
-  //     <button onClick={logout}>Click để logout</button>
-  //   </div>
-  // ) : (
-  //   <Link to={oauthURL}>Login with Google</Link>
-  // )}
+  // const logout = () => {
+  //   localStorage.removeItem("accessToken");
+  //   localStorage.removeItem("refresh_token");
+  //   window.location.reload();
+  // };
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState({

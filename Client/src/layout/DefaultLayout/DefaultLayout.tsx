@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "./DefaultLayout.css";
 import RightBar from "../../components/RightBar/RightBar";
 import Sidebar from "../../components/Sidebar/Sidebar";

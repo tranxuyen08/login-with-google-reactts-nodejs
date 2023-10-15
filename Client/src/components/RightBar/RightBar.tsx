@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./RightBar.css";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-// import { getAll } from "../../redux/reducer/movieSlice";
 
 const RightBar: React.FC = () => {
-  // const dispatch = useDispatch();
-  // const movies = useSelector((state) => state?.movie.data?.data);
   const [isLoad, setIsLoad] = useState(true);
 
   const handleGetTrending = async () => {
@@ -23,7 +19,7 @@ const RightBar: React.FC = () => {
 
   useEffect(() => {
     handleGetTrending();
-  }, []);
+  }, [isLoad]);
 
   return (
     <section className="sect-right-bar">
